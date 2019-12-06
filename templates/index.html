@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Mars Mission</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron text-center">
+			<h1>Mission to Mars</h1>
+			<p>
+				<a class="btn btn-primary btn-lg" href="\scrape" role="button">Get Data</a>
+			</p>
+		</div>		
+	</div>
+	<div class="container">
+		<h2>Latest News</h2>
+		<h5>{{mars.articleTitle}}</h5>
+		<h6>{{mars.articleBody}}</h6>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-12">
+				<h3>Featured Image</h3>
+				<img src="{{mars.featuredImage}}" alt="featuredImage">
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<div class="card" style="width: 18rem">
+					<div>
+						<h3 class="card-title">Current Weather</h3>
+						<p class="card-text">{{mars.marsWeather}}</p>
+					</div>
+				</div>
+			</div>
+
+			<br><br><br>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Mars Facts</h3>
+					{{mars.marsFacts|safe}}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
